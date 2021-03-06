@@ -1,10 +1,14 @@
 import React from 'react';
 import ArtistInfos from './ArtistInfos'
 
-const Infos = (artistInfos) => {
+const Infos = (infos) => {
+
     return(    
         <div>
-            <ArtistInfos artistInfos/>
+            
+            {console.log({infos}.infos.infos.artistName)}
+
+            {infos.artistName}
         </div>
     )
 }
