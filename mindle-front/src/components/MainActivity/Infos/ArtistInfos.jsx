@@ -2,7 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-const ArtistInfos = (infos) => {
+const ArtistInfos = ({infos}) => {
     return (
         <div>
             <h3>{infos.artistName} - {infos.titleSong}</h3>

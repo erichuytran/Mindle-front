@@ -22,7 +22,7 @@ const MainActivity = () => {
     return (
         <div id='mainActivity'>
             <SwipableCard coverArt={tempCoverArt} />
-            
+
             <Infos infos={artistInfos} />
         </div>
     )
