@@ -1,10 +1,10 @@
 import React from 'react';
 import ArtistInfos from './ArtistInfos'
 
-const Infos = (artistInfos) => {
+const Infos = ({infos}) => {
     return(    
         <div>
-            <ArtistInfos artistInfos/>
+            <ArtistInfos infos={infos} />
         </div>
     )
 }
