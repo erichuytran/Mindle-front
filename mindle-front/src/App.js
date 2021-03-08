@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainActivity from './components/MainActivity'
 import ConnexionActivity from './components/ConnexionActivity'
 
@@ -10,14 +10,16 @@ function App() {
 
   const setNewHash = (newHash) => {
     setHash(newHash['access_token'])
-    console.log(hash)
-    newHash != 0 && setConnexionStatus(!connexionStatus)
   }
+
+  useEffect(() => {
+    hash != 0 && setConnexionStatus(!connexionStatus)
+  }, [hash])
 
   return (
     <div>
       {
-        connexionStatus ? <MainActivity /> : <ConnexionActivity setNewHash={setNewHash} />
+        connexionStatus ? <MainActivity accessToken={hash} /> : <ConnexionActivity setNewHash={setNewHash} />
       }
     </div>
   )

@@ -12,4 +12,3 @@ const ArtistInfos = ({infos}) => {
 }
 
 export default ArtistInfos
-    

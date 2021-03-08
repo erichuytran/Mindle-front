@@ -8,7 +8,6 @@ const SwipableCard = ( {coverArt} ) => {
         <div>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={coverArt} />
-                { console.log(coverArt) }
                 <Card.Body>
                     <Button variant="dark" id="btnPlay">Play</Button>
                 </Card.Body>
