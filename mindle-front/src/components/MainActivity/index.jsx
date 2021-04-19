@@ -3,6 +3,8 @@ import '../../css/MainActivity/MainActivity.css'
 import SwipableCard from './SwipableCard';
 import Infos from './Infos/index.jsx';
 import jsonData from '../../mockedData/mockedData.json'
+import axios from 'axios';
+
 
 const MainActivity = ({ accessToken }) => {
 
@@ -33,15 +35,6 @@ const MainActivity = ({ accessToken }) => {
     // Récupération d’un caractère aléatoire dans characters
     const randomCharacter = characters.charAt(Math.floor(Math.random() * characters.length));
     let randomSearch = '';
-    // On place le caractère choisis au début, ou à l’intérieur de la recherche, aléatoirement
-   /* switch (Math.round(Math.random())) {
-      case 0:
-        randomSearch = randomCharacter + '%';
-        break;
-      case 1:
-        randomSearch = '%' + randomCharacter + '%';
-        break;
-    }*/
     randomSearch = randomCharacter;
 
     return randomSearch;
@@ -50,13 +43,12 @@ const MainActivity = ({ accessToken }) => {
   const randomOffset = Math.floor(Math.random() * 1000);
 
   const getRandomSong = () => {
-    fetch('https://api.spotify.com/v1/search?q=' + getRandomSearch() + '&offset=' + randomOffset + '&type=track&limit=1', {
-    method: "GET",
-    headers: {
+    axios.get('https://api.spotify.com/v1/search?q=' + getRandomSearch() + '&offset=' + randomOffset + '&type=track&limit=1',
+    {headers: {
       Authorization: `Bearer ${accessToken}`
     }
   })
-  .then(response => response.json())
+  .then(response => response.data)
   .then((resp) => {
     console.log("Title : ", resp["tracks"]["items"][0]["name"])
     setTitle(resp["tracks"]["items"][0]["name"])
