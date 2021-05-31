@@ -6,3 +6,23 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.coverArt {
+    margin: 0 27vh;
+    width: 60%;
+}
+
+.buttons {
+    width: 50vh;
+    margin: 5% 41vh;
+}
+
+.buttonElement {
+    display: inline-block;
+    position: relative;
+    margin: 0px 55px;
+}
+
+.logout {
+    margin: 30px 0 0 12vh;
+}
