@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+    font-family: 'Overpass-Black';
+    src:url('./fonts/Overpass-Black.ttf.woff') format('woff'),
+        url('./fonts/Overpass-Black.ttf.svg#./fonts/Overpass-Black') format('svg'),
+        url('./fonts/Overpass-Black.ttf.eot'),
+        url('./fonts/Overpass-Black.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}

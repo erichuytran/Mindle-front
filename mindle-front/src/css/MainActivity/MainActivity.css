@@ -8,31 +8,39 @@
 }
 
 .coverArt {
-    margin: 0 38vh;
-    width: 60%;
+    margin: 0 auto;
+    width: 640px; 
 }
 
 .coverDetails{
-    margin: auto;
+    margin: 20px auto 0 auto;
     text-align: center;
     font-size: 1.5rem;
 }
 
 .buttons {
     width: 50vh;
-    margin: 2% 51vh;
-}
-
-.buttonElement {
-    display: inline-block;
-    position: relative;
-    margin: 0px 55px;
-}
-
-.logout {
-    margin: 30px 0 0 12vh;
+    margin: 5% auto 0 auto;
 }
 
 .songPreview {
-    margin: 0px 55vh;
+    display: block;
+    margin: 10px auto;
+    width: 50vh;
+    height: 50px;
 }
+
+.buttonElement {
+    display: block;
+    position: relative;
+    margin: 0 2.1%;
+    width: 45%;
+}
+
+.logout {
+    display: block;
+    margin: 4vh auto 0 auto;
+    width: 100px;
+    height: 70px;
+}
+

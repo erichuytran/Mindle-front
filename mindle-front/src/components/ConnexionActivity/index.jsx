@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import logo from "../../img/mindle_logo.png"
+import "../../css/ConnexionActivity/connexion.css"
 
 const ConnexionActivity = ({ setNewHash = () => { } }) => {
     const CLIENT_ID = 'ac2686602dd842ef9dabff18e06e527a';
@@ -34,8 +36,10 @@ const ConnexionActivity = ({ setNewHash = () => { } }) => {
     },[])
 
     return (
-        <div>
-            <button onClick={() => { openConnexion() }}  >CONNEXION</button>
+        <div className ="page">
+            <img src={ logo } alt="logo" className="logo" />
+            <button onClick={() => { openConnexion() }} className="btnConnection" ></button>
+            <div className="label"> CONNECTION </div>
         </div>
     )
 }
