@@ -12,6 +12,12 @@
     width: 60%;
 }
 
+.coverDetails{
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .buttons {
     width: 50vh;
     margin: 2% 51vh;

@@ -79,20 +79,23 @@ const MainActivity = ({ accessToken }) => {
 
     return (
         <div id='mainActivity'>
-           
             <div className="coverArt">
             {
                 songList &&
                     <img src={songList[0].cover} alt="" />
             }
             </div>
-
             {
                 songList &&
-                <video controls autoPlay loop muted src={songList[0].preview_url} className="songPreview" />
+                <div>
+                    <div className="coverDetails">
+                        <div>{songList[0].title} - {songList[0].artist}</div>
+                        <div>{songList[0].album}</div>
+                    </div>
+                    <video controls autoPlay loop muted src={songList[0].preview_url} className="songPreview" />
+                </div>
                 
             }
-  
             <div className="buttons">
                 <Button variant="success" onClick={ like } className="buttonElement">LIKE</Button>{' '}
                 <Button variant="danger" onClick={ dislike } className="buttonElement">DISLIKE</Button>{' '}
