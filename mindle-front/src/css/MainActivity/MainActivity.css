@@ -8,13 +8,13 @@
 }
 
 .coverArt {
-    margin: 0 27vh;
+    margin: 0 38vh;
     width: 60%;
 }
 
 .buttons {
     width: 50vh;
-    margin: 5% 41vh;
+    margin: 2% 51vh;
 }
 
 .buttonElement {
@@ -25,4 +25,8 @@
 
 .logout {
     margin: 30px 0 0 12vh;
+}
+
+.songPreview {
+    margin: 0px 55vh;
 }

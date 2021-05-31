@@ -27,11 +27,13 @@ const MainActivity = ({ accessToken }) => {
     const addNewSongList = (tracks) => {
         const newSongList = []
         tracks["items"].forEach(element => {
+            console.log(tracks["items"])
             const songItem = {
                 title: element["name"],
                 artist: element["artists"][0]["name"],
                 album: element["album"]["name"],
-                cover: element["album"]["images"][0]["url"]
+                cover: element["album"]["images"][0]["url"],
+                preview_url: element["preview_url"]
             };
                 if (songList) {
                     newSongList.push(songItem)
@@ -53,7 +55,11 @@ const MainActivity = ({ accessToken }) => {
             })
             .then(response => response.data)
             .then((resp) => {
-                addNewSongList(resp["tracks"])
+                if (resp["tracks"]["items"][0].preview_url) {
+                    addNewSongList(resp["tracks"])
+                } else {
+                    getRandomSong()
+                }
             })
     };
 
@@ -70,7 +76,7 @@ const MainActivity = ({ accessToken }) => {
         getRandomSong()
         console.log(songList[0].album + " Disliked :(")
     }
- 
+
     return (
         <div id='mainActivity'>
            
@@ -81,6 +87,12 @@ const MainActivity = ({ accessToken }) => {
             }
             </div>
 
+            {
+                songList &&
+                <video controls autoPlay loop muted src={songList[0].preview_url} className="songPreview" />
+                
+            }
+  
             <div className="buttons">
                 <Button variant="success" onClick={ like } className="buttonElement">LIKE</Button>{' '}
                 <Button variant="danger" onClick={ dislike } className="buttonElement">DISLIKE</Button>{' '}
